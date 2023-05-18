@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CMart</title>
+	<meta name="description" content=""/>
+	<meta name="viewport" content="width=device-width">
+	<base href="/"/>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css"/>
+	<script type="text/javascript" src="/webjars/jquery/3.6.0/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h1>Login:</h1>
+<div class="container unauthenticated">
+	By Google account: <a href="/oauth2/authorization/google">Click</a>
+</div>
+
+<div class="container authenticated" style="display: none">
+	Log in as: <span id="user"></span>
+</div>
+<script type="text/javascript">
+	$.get("/user", function (data){
+				$("#user").html(data.name);
+				$(".unauthenticated").hide()
+				$(".authenticated").show()
+			}
+	)
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cmart
+    username: postgres
+    password: vu159
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: 195643684281-h7ci2epspjo72sjuc1hc39350vv7robg.apps.googleusercontent.com
+            clientSecret: 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
+            scope:
+              - email
+              - profile
